@@ -1,0 +1,97 @@
+/* Shared "research" look — borrowed from natashajha.github.io/research.html.
+   Linked on every page except index.html (home keeps the original site style). */
+:root {
+  --bg: #f7f2e9;
+  --fg: #33291f;
+  --fg-muted: #8c7a63;
+  --accent: #33291f;
+  --border: #e3d9c6;
+}
+body { font-family: 'DM Sans', sans-serif; }
+
+blockquote {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--fg);
+}
+blockquote p { margin-bottom: 1rem; }
+
+.section-label {
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2d5a3d;
+  font-weight: 500;
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.paper { padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+section:last-child .paper:last-child { border-bottom: none; }
+
+.paper-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
+  color: var(--fg);
+}
+.paper-title a { color: inherit; text-decoration: none; }
+.paper-title a:hover { color: #2d5a3d; opacity: 1; }
+
+.paper-desc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--fg);
+  margin-top: 0.5rem;
+}
+
+.paper-meta {
+  font-size: 0.95rem;
+  color: var(--fg-muted);
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+.paper-meta a { color: var(--fg-muted); text-decoration: underline; }
+.paper-meta a:hover { color: #2d5a3d; opacity: 1; }
+.paper-meta .venue { color: #b8863f; font-style: italic; }
+
+.abstract-toggle {
+  background: none;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.abstract-toggle:hover { color: #2d5a3d; }
+.abstract-toggle .arrow {
+  display: inline-block;
+  transition: transform 0.25s;
+  font-size: 0.6rem;
+}
+.abstract-toggle.open .arrow { transform: rotate(90deg); }
+
+.abstract-box {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.abstract-box.open { max-height: 800px; }
+.abstract-box p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--fg-muted);
+  margin: 0.9rem 0 0;
+  padding-left: 1rem;
+  border-left: 2px solid #b8863f;
+}
