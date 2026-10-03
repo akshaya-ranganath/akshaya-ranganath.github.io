@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Geography Is Cool | Akshaya Ranganath</title>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  >
+
+  <style>
+    .map-page {
+      padding-bottom: 0;
+    }
+
+    .map-intro {
+      margin-bottom: 24px;
+    }
+
+    .map-intro h1 {
+      margin-bottom: 8px;
+    }
+
+    .map-intro p {
+      color: var(--fg-muted);
+      margin-bottom: 0;
+    }
+
+    #world-map {
+      width: 100%;
+      height: 70vh;
+      min-height: 500px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .leaflet-container {
+      font-family: inherit;
+    }
+
+    .map-credit {
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: var(--fg-muted);
+    }
+
+    @media (max-width: 600px) {
+      #world-map {
+        height: 65vh;
+        min-height: 400px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrap map-page">
+
+    <div class="profile compact">
+      <img
+        src="assets/_img/professional_photo.jpg"
+        alt="Profile photo"
+        width="64"
+        height="64"
+      >
+
+      <div>
+        <h1>Akshaya Ranganath</h1>
+      </div>
+    </div>
+
+    <nav class="site-nav">
+      <a href="index.html">home</a>
+      <a href="cv.html">cv</a>
+      <a href="research.html">research</a>
+      <a href="impact.html">social impact</a>
+      <a href="maps.html" class="active">Maps</a>
+
+      <button class="theme-toggle" type="button">
+        dark mode
+      </button>
+    </nav>
+
+    <main>
+
+      <div class="map-intro">
+        <h1>Geography is cool</h1>
+
+        <p>
+          An interactive map exploring countries, ports, trade flows,
+          and changes in global transportation networks.
+        </p>
+      </div>
+
+      <div id="world-map"></div>
+
+      <div class="map-credit">
+        © OpenStreetMap contributors
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Leaflet -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+  </script>
+
+  <script>
+
+    const map = L.map("world-map").setView([20, 0], 2);
+
+    L.tileLayer(
+      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+      {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors'
+      }
+    ).addTo(map);
+
+  </script>
+
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
